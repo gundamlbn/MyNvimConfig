@@ -40,8 +40,17 @@ vim.api.nvim_create_autocmd({"BufReadPost"}, {
     command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]
 })
 
--- local autocmd = vim.api.nvim_create_autocmd
 
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd("FileType", {
+    pattern = "java",
+    callback = function()
+        vim.opt.shiftwidth = 4
+        vim.opt.tabstop = 4
+        vim.opt.softtabstop = 4
+    end,
+  })
 -- -- Auto resize panes when resizing nvim window
 -- autocmd("VimResized", {
 --   pattern = "*",
