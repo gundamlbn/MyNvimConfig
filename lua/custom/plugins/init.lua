@@ -131,9 +131,19 @@ return {
         end
     },
 
-    ["lyokha/vim-xkbswitch"] = {
+    ["keaising/im-select.nvim"] = {
+        config = function()
+            require('im_select').setup {
+                -- IM will be set to `default_im_select` in `normal` mode(`EnterVim` or `InsertLeave`)
+                -- For Windows, default: "1003", aka: English US Keyboard
+                -- You can use `im-select` in cli to get the IM name of you preferred
+                default_im_select  = "1033",
+            
+                -- Set to 1 if you don't want restore IM status when `InsertEnter`
+                disable_auto_restore = 1,
+            }
+        end
     }
-
     -- remove plugin
     -- ["hrsh7th/cmp-path"] = false,
 }
