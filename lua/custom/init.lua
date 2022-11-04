@@ -24,6 +24,8 @@ vim.cmd([[
     let g:XkbSwitchIMappings = ['cn', 'jp', 'cn']
 ]])
 
+vim.cmd [[packadd lyokha/vim-xkbswitch]]
+
 require('packer').startup(function(use)
     use 'lyokha/vim-xkbswitch'
 end)
