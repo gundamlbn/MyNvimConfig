@@ -65,7 +65,9 @@ return {
         config = function()
             require('auto-session').setup {
                 log_level = "error",
-                auto_session_enable_last_session = true
+                auto_session_enable_last_session = true,
+                auto_save_enabled = true,
+                auto_restore_enabled = true,
                 -- cwd_change_handling = {
                 --     post_cwd_changed_hook = function() -- example refreshing the lualine status line _after_ the cwd changes
                 --         require("lualine").refresh() -- refresh lualine so the new session name is displayed in the status bar
@@ -85,6 +87,17 @@ return {
             })
         end
     },
+
+    -- AI自动完成
+
+    ["tzachar/cmp-tabnine"] = {
+        requires = 'hrsh7th/nvim-cmp',
+        after = "nvim-cmp",
+        run = "powershell ./install.ps1",
+        config = function()
+          require "custom.plugins.tabnine"
+        end,
+      },
 
     -- enables dashboard
     ["goolord/alpha-nvim"] = {

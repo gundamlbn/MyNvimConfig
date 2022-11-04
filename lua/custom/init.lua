@@ -6,6 +6,9 @@ vim.o.colorcolumn = "120"
 -- 不复制到系统剪切板
 vim.o.clipboard = ""
 
+-- CRLF模式保存
+vim.o.fileformats = "dos,unix"
+
 -- 禁用多光标警告
 vim.g.VM_show_warnings = 0
 
@@ -15,9 +18,6 @@ vim.g.asynctasks_term_rows = 15
 
 -- vim-table-mode更改为markdown语法
 vim.g.table_mode_corner = '|'
-
--- 自动切换输入法
-
 
 -- 打开时自动定位到上次关闭位置
 vim.api.nvim_create_autocmd({"BufReadPost"}, {
