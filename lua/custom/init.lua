@@ -19,8 +19,8 @@ vim.g.table_mode_corner = '|'
 -- 自动切换输入法
 vim.cmd([[
     let g:XkbSwitchEnabled = 1
-    let g:XkbSwitchLib = 'D:\tools\fromgit\xkb-switch-win\bin\libxkbswitch64.dll'
-    let g:XkbSwitchIMappingsTrData = 'D:\tools\fromgit\xkb-switch-win\charmap\charmap.txt'
+    let g:XkbSwitchLib = 'D:\\tools\\fromgit\\xkb-switch-win\\bin\\libxkbswitch64.dll'
+    let g:XkbSwitchIMappingsTrData = 'D:\\tools\\fromgit\\xkb-switch-win\\charmap\\charmap.txt'
     let g:XkbSwitchIMappings = ['cn', 'jp', 'cn']
 ]])
 
