@@ -24,12 +24,6 @@ vim.cmd([[
     let g:XkbSwitchIMappings = ['cn', 'jp', 'cn']
 ]])
 
-vim.cmd [[packadd lyokha/vim-xkbswitch]]
-
-require('packer').startup(function(use)
-    use 'lyokha/vim-xkbswitch'
-end)
-
 -- 打开时自动定位到上次关闭位置
 vim.api.nvim_create_autocmd({"BufReadPost"}, {
     pattern = "*",
