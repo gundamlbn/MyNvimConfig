@@ -133,5 +133,4 @@ return {
 
     -- remove plugin
     -- ["hrsh7th/cmp-path"] = false,
-    ['lyokha/vim-xkbswitch'] = true
 }
