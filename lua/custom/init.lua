@@ -17,22 +17,12 @@ vim.g.asynctasks_term_rows = 15
 vim.g.table_mode_corner = '|'
 
 -- 自动切换输入法
-vim.api.nvim_create_autocmd({"InsertLeave"}, {
-    pattern = "*",
-    command = ":silent !fcitx5-remote -c"
-})
-vim.api.nvim_create_autocmd({"BufCreate"}, {
-    pattern = "*",
-    command = ":silent !fcitx5-remote -c"
-})
-vim.api.nvim_create_autocmd({"BufEnter"}, {
-    pattern = "*",
-    command = ":silent !fcitx5-remote -c"
-})
-vim.api.nvim_create_autocmd({"BufLeave"}, {
-    pattern = "*",
-    command = ":silent !fcitx5-remote -c"
-})
+vim.cmd([[
+    let g:XkbSwitchEnabled = 1
+    let g:XkbSwitchLib = 'D:\tools\fromgit\xkb-switch-win\bin\libxkbswitch64.dll'
+    let g:XkbSwitchIMappingsTrData = 'D:\tools\fromgit\xkb-switch-win\charmap\charmap.txt'
+    let g:XkbSwitchIMappings = ['cn', 'jp', 'cn']
+]])
 
 -- 打开时自动定位到上次关闭位置
 vim.api.nvim_create_autocmd({"BufReadPost"}, {

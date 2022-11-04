@@ -129,9 +129,9 @@ return {
         config = function()
             require "custom.plugins.null-ls"
         end
-    }
+    },
 
     -- remove plugin
     -- ["hrsh7th/cmp-path"] = false,
-
+    ['lyokha/vim-xkbswitch'] = true
 }
