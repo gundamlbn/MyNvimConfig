@@ -126,7 +126,7 @@ return {
     },
 
     ["hrsh7th/nvim-cmp"] = {
-        override_options = overrides.nvimtree.cmp
+        override_options = overrides.cmp
     },
 
     -- Install a plugin
