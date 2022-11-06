@@ -32,4 +32,11 @@ M.nvimtree = {
     }
 }
 
+M.cmp = {
+    sources = { 
+        name = 'cmp_tabnine' 
+    }
+}
+
+
 return M
