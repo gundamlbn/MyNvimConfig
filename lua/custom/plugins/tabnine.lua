@@ -6,6 +6,16 @@ end
 
 local sources = {{
     name = 'cmp_tabnine'
+}, {
+    name = 'nvim_lsp'
+}, {
+    name = 'luasnip'
+}, {
+    name = 'buffer'
+}, {
+    name = 'path'
+}, {
+    name = 'nvim_lua'
 }}
 
 cmp.setup {
