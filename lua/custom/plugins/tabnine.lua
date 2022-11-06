@@ -1,13 +1,28 @@
 local present, cmp = pcall(require, "cmp")
 
 if not present then
-   return
+    return
 end
 
-local sources = {
-  { name = 'cmp_tabnine' },
-}
+local sources = {{
+    {
+        name = "luasnip"
+    },
+    {
+        name = "nvim_lsp"
+    },
+    {
+        name = "buffer"
+    },
+    {
+        name = "nvim_lua"
+    },
+    {
+        name = "path"
+    },
+    name = 'cmp_tabnine'
+}}
 
 cmp.setup {
-   sources = sources,
+    sources = sources
 }
