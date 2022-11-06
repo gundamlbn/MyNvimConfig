@@ -67,7 +67,7 @@ return {
                 log_level = "error",
                 auto_session_enable_last_session = true,
                 auto_save_enabled = true,
-                auto_restore_enabled = true,
+                auto_restore_enabled = true
                 -- cwd_change_handling = {
                 --     post_cwd_changed_hook = function() -- example refreshing the lualine status line _after_ the cwd changes
                 --         require("lualine").refresh() -- refresh lualine so the new session name is displayed in the status bar
@@ -94,6 +94,9 @@ return {
         requires = 'hrsh7th/nvim-cmp',
         after = "nvim-cmp",
         run = "powershell ./install.ps1",
+        config = function()
+            require "custom.plugins.tabnine"
+        end
     },
 
     -- enables dashboard
@@ -125,10 +128,6 @@ return {
         override_options = overrides.nvimtree
     },
 
-    ["hrsh7th/nvim-cmp"] = {
-        override_options = overrides.cmp
-    },
-
     -- Install a plugin
     ["max397574/better-escape.nvim"] = {
         event = "InsertEnter",
@@ -151,10 +150,10 @@ return {
                 -- IM will be set to `default_im_select` in `normal` mode(`EnterVim` or `InsertLeave`)
                 -- For Windows, default: "1003", aka: English US Keyboard
                 -- You can use `im-select` in cli to get the IM name of you preferred
-                default_im_select  = "1033",
-            
+                default_im_select = "1033",
+
                 -- Set to 1 if you don't want restore IM status when `InsertEnter`
-                disable_auto_restore = 1,
+                disable_auto_restore = 1
             }
         end
     }

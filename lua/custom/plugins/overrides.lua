@@ -5,13 +5,11 @@ M.treesitter = {
 }
 
 M.mason = {
-    ensure_installed = { 
-    -- lua stuff
+    ensure_installed = { -- lua stuff
     -- "lua-language-server",
     -- "stylua", 
     -- web dev stuff
-    "css-lsp", "html-lsp", "typescript-language-server", 
-    -- "deno",
+    "css-lsp", "html-lsp", "typescript-language-server", -- "deno",
     -- java dev stuff
     "jdtls"}
 }
@@ -31,12 +29,5 @@ M.nvimtree = {
         }
     }
 }
-
-M.cmp = {
-    sources = { 
-        name = 'cmp_tabnine' 
-    }
-}
-
 
 return M
