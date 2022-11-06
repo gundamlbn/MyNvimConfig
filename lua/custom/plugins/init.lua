@@ -91,7 +91,6 @@ return {
     -- AI自动完成
 
     ["tzachar/cmp-tabnine"] = {
-        requires = 'hrsh7th/nvim-cmp',
         after = "nvim-cmp",
         run = "powershell ./install.ps1",
         config = function()
