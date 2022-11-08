@@ -38,7 +38,7 @@ local on_attach = function(client, bufnr)
     -- buf_set_keymap("n", "<leader>l", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
     -- buf_set_keymap("n", "<leader>l", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
     -- 自动导入全部缺失的包，自动删除多余的未用到的包
-    buf_set_keymap("n", "<A-o>", "<cmd>lua require'jdtls'.organize_imports()<CR>", opts)
+    buf_set_keymap("n", "<M-o>", "<cmd>lua require'jdtls'.organize_imports()<CR>", opts)
     -- 引入局部变量的函数 function to introduce a local variable
     buf_set_keymap("n", "crv", "<cmd>lua require('jdtls').extract_variable()<CR>", opts)
     buf_set_keymap("v", "crv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
