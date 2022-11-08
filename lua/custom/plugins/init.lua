@@ -1,5 +1,21 @@
 local overrides = require "custom.plugins.overrides"
 
+local function close_all_floating_wins()
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+        local config = vim.api.nvim_win_get_config(win)
+        if config.relative ~= '' then
+            vim.api.nvim_win_close(win, false)
+        end
+    end
+end
+
+local function restore_nvim_tree()
+    -- vim.cmd "PackerLoad nvim-lspconfig nvim-jdtls"
+    local nvim_tree = require('nvim-tree')
+    nvim_tree.change_dir(vim.fn.getcwd())
+    nvim_tree.refresh()
+end
+
 return {
 
     -- 平滑滚动
@@ -65,14 +81,17 @@ return {
         config = function()
             require('auto-session').setup {
                 log_level = "error",
-                auto_session_enable_last_session = true,
+                -- auto_session_enable_last_session = true,
                 auto_save_enabled = true,
-                auto_restore_enabled = true
+                auto_restore_enabled = true,
+                bypass_session_save_file_types = {'class'},
                 -- cwd_change_handling = {
                 --     post_cwd_changed_hook = function() -- example refreshing the lualine status line _after_ the cwd changes
                 --         require("lualine").refresh() -- refresh lualine so the new session name is displayed in the status bar
                 --     end
                 -- }
+                pre_save_cmds = {close_all_floating_wins, "NvimTreeClose"},
+                pre_restore_cmds = {restore_nvim_tree}
             }
         end
     },
@@ -99,9 +118,9 @@ return {
     },
 
     -- enables dashboard
-    ["goolord/alpha-nvim"] = {
-        disable = false
-    },
+    -- ["goolord/alpha-nvim"] = {
+    --     disable = false
+    -- },
 
     -- Override plugin definition options
     ["neovim/nvim-lspconfig"] = {
@@ -155,7 +174,12 @@ return {
                 disable_auto_restore = 1
             }
         end
-    }
+    },
+
+    ["tpope/vim-unimpaired"] = {},
+
+    ["gaving/vim-textobj-argument"] = {}
+
     -- remove plugin
     -- ["hrsh7th/cmp-path"] = false,
 }
