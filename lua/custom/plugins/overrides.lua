@@ -36,4 +36,12 @@ M.nvimtree = {
     }
 }
 
+M.ui = {
+    statusline = {
+        overriden_modules = function()
+            return require "custom.plugins.statusline_session"
+        end
+    }
+}
+
 return M

@@ -55,9 +55,18 @@ return {
 
     -- 现代任务系统
     ["skywind3000/asynctasks.vim"] = {
+        module = {"telescope"},
         requires = "skywind3000/asyncrun.vim",
-        cmd = {"AsyncTask", "AsyncTaskEdit"},
+        cmd = {"AsyncTask", "AsyncTaskEdit", "Telescope"},
         opt = true
+    },
+
+    ["GustavoKatel/telescope-asynctasks.nvim"] = {
+        module = {"telescope"},
+        requires = {"nvim-lua/popup.nvim"},
+        config = function()
+            require('telescope').extensions.asynctasks.all()
+        end
     },
 
     -- 函数列表
@@ -96,7 +105,6 @@ return {
         end
     },
     ["rmagatti/session-lens"] = {
-        requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
         after = "telescope.nvim",
         config = function()
             require('session-lens').setup({
@@ -133,6 +141,17 @@ return {
     ["mfussenegger/nvim-jdtls"] = {
         ft = "java"
     },
+
+    -- test
+    ["vim-test/vim-test"] = {},
+
+    ["nvim-neotest/neotest"] = {
+        requires = {"antoinemadec/FixCursorHold.nvim", "vim-test/vim-test", "nvim-neotest/neotest-vim-test"},
+        config = function()
+            require "custom.plugins.java-test"
+        end
+    },
+
     -- overrde plugin configs
     ["nvim-treesitter/nvim-treesitter"] = {
         override_options = overrides.treesitter
@@ -144,6 +163,10 @@ return {
 
     ["kyazdani42/nvim-tree.lua"] = {
         override_options = overrides.nvimtree
+    },
+
+    ["NvChad/ui"] = {
+        override_options = overrides.ui
     },
 
     -- Install a plugin

@@ -40,28 +40,27 @@ M.other = {
 
 M.Undotree = {
     n = {
-        ["<A-u>"] = {"<cmd> UndotreeToggle<CR>", "打开/关闭历史编辑记录"}
+        ["<M-u>"] = {"<cmd> UndotreeToggle<CR>", "打开/关闭历史编辑记录"}
     }
 }
 
 M.AsyncTask = {
     n = {
-        ["<F8>"] = {"<cmd> AsyncTask file-build<CR>", "一键编译"},
-        ["<F9>"] = {"<cmd> AsyncTask file-run<CR>", "一键运行"}
-        -- ["<F10>"] = {"<cmd> AsyncTask file-build<CR> | <cmd> AsyncTask file-run<CR>", "一键编译运行"},
+        ["<F8>"] = {"<cmd> AsyncTask mvn clean install<CR>", "mvn install"},
+        ["<F9>"] = {"<cmd> AsyncTask mvn clean package<CR>", "mvn package"}
     }
 }
 
 M.Vista = {
     n = {
-        ["<A-f>"] = {"<cmd> Vista<CR>", "开启/关闭函数列表"}
+        ["<M-f>"] = {"<cmd> Vista<CR>", "开启/关闭函数列表"}
     }
 }
 
 M.Markdown = {
     n = {
         ["<leader>tm"] = {"<cmd> TableModeToggle<CR>", "创建表格"},
-        ["<A-r>"] = {"<cmd> MarkdownPreviewToggle<CR>", "markdown一键预览"}
+        ["<M-r>"] = {"<cmd> MarkdownPreviewToggle<CR>", "markdown一键预览"}
     }
 }
 
@@ -70,6 +69,18 @@ M.format = {
         ["<leader>fm"] = {function()
             vim.lsp.buf.formatting()
         end, "   lsp formatting"}
+    }
+}
+
+M.test = {
+    plugin = true,
+    n = {
+        ["<leader>t"] = {function()
+            require("neotest").run.run()
+        end, "Run the nearest test"},
+        ["<leader>T"] = {function()
+            require("neotest").run.run(vim.fn.expand("%"))
+        end, "Run the current file"}
     }
 }
 
