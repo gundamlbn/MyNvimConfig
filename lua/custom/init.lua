@@ -24,6 +24,8 @@ vim.api.nvim_create_autocmd({"BufReadPost"}, {
     pattern = "*",
     command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]
 })
+-- python3
+vim.g.python3_host_prog = "C:/Users/liubin0093/.pyenv/pyenv-win/versions/3.8.2/python.exe"
 
 local autocmd = vim.api.nvim_create_autocmd
 
