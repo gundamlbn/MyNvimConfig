@@ -185,6 +185,12 @@ return {
         end
     },
 
+    ["simrat39/rust-tools.nvim"] = {
+        after = "nvim-lspconfig",
+        config = function()
+            require "custom.plugins.rust-tools"
+        end
+    },
     ["keaising/im-select.nvim"] = {
         config = function()
             require('im_select').setup {

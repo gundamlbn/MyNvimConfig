@@ -6,7 +6,7 @@ M.treesitter = function()
     ft_to_parser.class = "java"
 
     return {
-        ensure_installed = {"vim", "lua", "html", "css", "typescript", "c", "java"}
+        ensure_installed = {"vim", "lua", "html", "css", "typescript", "c", "java", "rust"}
     }
 end
 
@@ -17,7 +17,7 @@ M.mason = {
     -- web dev stuff
     "css-lsp", "html-lsp", "typescript-language-server", -- "deno",
     -- java dev stuff
-    "jdtls"}
+    "jdtls", "rust-analyzer"}
 }
 
 -- git support in nvimtree
