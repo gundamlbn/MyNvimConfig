@@ -13,6 +13,8 @@ if not present then
     return
 end
 
-neotest.setup() {{require("neotest-vim-test")({
-    allow_file_types = {"java"}
-})}}
+neotest.setup({
+    adapters = {require("neotest-vim-test")({
+        allow_file_types = {"java"}
+    })}
+})
