@@ -35,7 +35,7 @@ local opts = {
     -- these override the defaults set by rust-tools.nvim
     -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
     server = {
-        cmd = "C:/Users/liubin0093/AppData/Local/nvim-data/mason/packages/rust-analyzer/rust-analyzer.exe",
+        cmd = {"C:/Users/liubin0093/AppData/Local/nvim-data/mason/packages/rust-analyzer/rust-analyzer.exe"},
         -- on_attach is a callback called when the language server attachs to the buffer
         on_attach = on_attach,
         settings = {
