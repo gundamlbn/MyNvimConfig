@@ -4,8 +4,8 @@
 -- end
 local rt = require("rust-tools")
 
-local function on_attach(_, bufnr)
-    require'completion'.on_attach(client)
+local function on_attach(client, bufnr)
+    require("plugins.configs.lspconfig").on_attach(client, bufnr)
     -- This callback is called when the LSP is atttached/enabled for this buffer
     -- we could set keymaps related to LSP, etc here.
     -- Hover actions
