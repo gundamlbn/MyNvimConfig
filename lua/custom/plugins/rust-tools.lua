@@ -1,10 +1,11 @@
-local present, rt = pcall(require, "rust-tools")
+-- local present, rt = pcall(require, "rust-tools")
+-- if not present then
+--     return
+-- end
+local rt = require("rust-tools")
 
-if not present then
-    return
-end
-
-local function on_attach(client, buffer)
+local function on_attach(_, bufnr)
+    require'completion'.on_attach(client)
     -- This callback is called when the LSP is atttached/enabled for this buffer
     -- we could set keymaps related to LSP, etc here.
     -- Hover actions
@@ -48,5 +49,4 @@ local opts = {
         }
     }
 }
-
 rt.setup(opts)

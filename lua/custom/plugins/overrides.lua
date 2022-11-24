@@ -17,7 +17,7 @@ M.mason = {
     -- web dev stuff
     "css-lsp", "html-lsp", "typescript-language-server", -- "deno",
     -- java dev stuff
-    "jdtls", "rust-analyzer"}
+    "jdtls", "rust-analyzer", "rustfmt"}
 }
 
 -- git support in nvimtree

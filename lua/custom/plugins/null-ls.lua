@@ -31,15 +31,11 @@ null_ls.setup {
 
     -- -- format on save
     on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                pattern = "*.rs",
-                callback = function()
-                    vim.lsp.buf.formatting_sync(nil, 200)
-                end,
-                group = format_sync_grp
-            })
-        end
-
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            pattern = "*.rs",
+            callback = function()
+                vim.lsp.buf.formatting_sync(nil, 200)
+            end
+        })
     end
 }
