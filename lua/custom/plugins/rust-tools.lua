@@ -9,7 +9,7 @@ local function on_attach(client, bufnr)
     -- This callback is called when the LSP is atttached/enabled for this buffer
     -- we could set keymaps related to LSP, etc here.
     -- Hover actions
-    vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, {
+    vim.keymap.set("n", "<C-a>", rt.hover_actions.hover_actions, {
         buffer = bufnr
     })
     -- Code action groups
