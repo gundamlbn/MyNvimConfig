@@ -6,7 +6,7 @@ M.treesitter = function()
     ft_to_parser.class = "java"
 
     return {
-        ensure_installed = {"vim", "lua", "html", "css", "typescript", "c", "java", "rust", "astro", "md", "mdx"}
+        ensure_installed = {"vim", "lua", "html", "css", "typescript", "c", "java", "rust", "astro", "markdown"}
     }
 end
 
